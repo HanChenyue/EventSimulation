@@ -23,37 +23,6 @@ public class GlobalInteractionTracker : MonoBehaviour
             Instance = this;
         }
     }
-
-    /*public void UpdateInteractions(GameObject entity, HashSet<GameObject> currentNeighbors)
-    {
-        // Initialize interaction set for new entities
-        if (!currentInteractions.ContainsKey(entity))
-        {
-            currentInteractions[entity] = new HashSet<GameObject>();
-        }
-
-        var previousNeighbors = currentInteractions[entity];
-        var newNeighbors = currentNeighbors.Except(previousNeighbors);
-        var lostNeighbors = previousNeighbors.Except(currentNeighbors);
-
-        // Handle new interactions
-        foreach (var neighbor in newNeighbors)
-        {
-            interactionStartTimes[(entity, neighbor)] = Time.time;
-            currentInteractions[entity].Add(neighbor);
-            Debug.Log($"{FormatTime(Time.time)} {entity.name} and {neighbor.name} are in an interaction");
-        }
-
-        // Handle ended interactions
-        foreach (var neighbor in lostNeighbors)
-        {
-            var startTime = interactionStartTimes[(entity, neighbor)];
-            var duration = Time.time - startTime;
-            Debug.Log($"{FormatTime(Time.time)} {entity.name} leaves {neighbor.name}. {entity.name} interacted with {neighbor.name} for {FormatDuration(duration)}");
-            currentInteractions[entity].Remove(neighbor);
-            interactionStartTimes.Remove((entity, neighbor));
-        }
-    }*/
     
     public void UpdateInteractions(GameObject entity, HashSet<GameObject> currentNeighbors)
     {
